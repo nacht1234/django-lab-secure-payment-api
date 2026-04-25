@@ -1,6 +1,10 @@
+import os
+from dotenv import load_dotenv
 from cryptography.fernet import Fernet
 
-key = Fernet.generate_key()
+load_dotenv()
+
+key = os.getenv("ENCRYPTION_KEY")
 cipher = Fernet(key)
 
 def encrypt_data(data: str) -> bytes:
