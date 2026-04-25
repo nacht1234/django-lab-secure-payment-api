@@ -1,6 +1,5 @@
 from cryptography.fernet import Fernet
 
-# In real apps, store this in environment variables!
 key = Fernet.generate_key()
 cipher = Fernet(key)
 
